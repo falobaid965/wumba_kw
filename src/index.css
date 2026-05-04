@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Noto+Sans+Arabic:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Noto Sans Arabic", sans-serif;
+  
+  --color-brand-orange: #F97316;
+  --color-brand-orange-dark: #C2410C;
+  --color-brand-orange-light: #FDBA74;
+  --color-brand-black: #1d1d1f;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-brand-black antialiased overflow-x-hidden;
+  }
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.hero-title {
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.whatsapp-pulse {
+  box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+  animation: pulse-orange 2s infinite;
+}
+
+@keyframes pulse-orange {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+.arabic-text {
+  direction: rtl;
+}
